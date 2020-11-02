@@ -1,7 +1,8 @@
-export default function Form() {
+export default function Form({ setInputText }) {
+  const inputTextHandler = (event) => setInputText(event.target.value);
   return (
     <form action="">
-      <input type="text" />
+      <input onChange={inputTextHandler} type="text" />
       <button type="submit">
         <i></i>
       </button>
