@@ -12,7 +12,7 @@ export default function Form({ setInputText, todos, setTodos, inputText }) {
     <form action="">
       <input value={inputText} onChange={inputTextHandler} type="text" />
       <button onClick={submitTodoHandler} type="submit">
-        <i></i>
+        +
       </button>
       <div>
         <select name="todos">
