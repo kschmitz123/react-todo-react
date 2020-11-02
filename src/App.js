@@ -5,12 +5,18 @@ import { useState } from "react";
 
 function App() {
   const [inputText, setInputText] = useState("");
+  const [todos, setTodos] = useState([]);
   return (
     <div className="App">
       <header>
         <h1>Kathrin's Todo List</h1>
       </header>
-      <Form setInputText={setInputText} />
+      <Form
+        todos={todos}
+        setTodos={setTodos}
+        inputText={inputText}
+        setInputText={setInputText}
+      />
       <TodoList />
     </div>
   );

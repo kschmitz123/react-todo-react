@@ -1,9 +1,17 @@
-export default function Form({ setInputText }) {
+export default function Form({ setInputText, todos, setTodos, inputText }) {
   const inputTextHandler = (event) => setInputText(event.target.value);
+  const submitTodoHandler = (event) => {
+    event.preventDefault();
+    setTodos([
+      ...todos,
+      { text: inputText, completed: false, id: Math.random() * 100 },
+    ]);
+    setInputText("");
+  };
   return (
     <form action="">
       <input onChange={inputTextHandler} type="text" />
-      <button type="submit">
+      <button onClick={submitTodoHandler} type="submit">
         <i></i>
       </button>
       <div>
