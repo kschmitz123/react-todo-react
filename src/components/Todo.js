@@ -1,9 +1,22 @@
-export default function Todo({ text }) {
+export default function Todo({ text, todo, setTodos, todos }) {
+  const deleteHandler = () => {
+    setTodos(todos.filter((element) => element.id !== todo.id));
+  };
+  const completeHandler = () => {
+    setTodos(
+      todos.map((item) => {
+        if (item.id === todo.id) {
+          return { ...item, completed: !item.completed };
+        }
+        return item;
+      })
+    );
+  };
   return (
     <div>
       <li>{text}</li>
-      <button>✅</button>
-      <button>🗑</button>
+      <button onClick={completeHandler}>✅</button>
+      <button onClick={deleteHandler}>🗑</button>
     </div>
   );
 }
