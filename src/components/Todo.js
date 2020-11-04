@@ -14,7 +14,9 @@ export default function Todo({ text, todo, setTodos, todos }) {
   };
   return (
     <div>
-      <li>{text}</li>
+      <li className={`todo-item ${todo.completed ? "completed" : ""}`}>
+        {text}
+      </li>
       <button onClick={completeHandler}>✅</button>
       <button onClick={deleteHandler}>🗑</button>
     </div>

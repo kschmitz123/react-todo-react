@@ -1,4 +1,10 @@
-export default function Form({ setInputText, todos, setTodos, inputText }) {
+export default function Form({
+  setInputText,
+  todos,
+  setTodos,
+  inputText,
+  setStatus,
+}) {
   const inputTextHandler = (event) => setInputText(event.target.value);
   const submitTodoHandler = (event) => {
     event.preventDefault();
@@ -8,6 +14,10 @@ export default function Form({ setInputText, todos, setTodos, inputText }) {
     ]);
     setInputText("");
   };
+  const statusHandler = (event) => {
+    setStatus(event.target.value);
+  };
+
   return (
     <form action="">
       <input value={inputText} onChange={inputTextHandler} type="text" />
@@ -15,10 +25,10 @@ export default function Form({ setInputText, todos, setTodos, inputText }) {
         +
       </button>
       <div>
-        <select name="todos">
-          <option value="all"></option>
-          <option value="completed"></option>
-          <option value="uncompleted"></option>
+        <select onChange={statusHandler} name="todos">
+          <option value="all">All</option>
+          <option value="completed">Completed</option>
+          <option value="uncompleted">Uncompleted</option>
         </select>
       </div>
     </form>

@@ -1,10 +1,10 @@
 import Todo from "./Todo";
 
-export default function TodoList({ todos, setTodos }) {
+export default function TodoList({ todos, setTodos, filteredTodos }) {
   return (
     <div>
       <ul>
-        {todos.map((todo) => (
+        {filteredTodos.map((todo) => (
           <Todo
             setTodos={setTodos}
             todos={todos}
