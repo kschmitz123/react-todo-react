@@ -1,3 +1,5 @@
+import "./todo.css";
+
 export default function Todo({ text, todo, setTodos, todos }) {
   const deleteHandler = () => {
     setTodos(todos.filter((element) => element.id !== todo.id));
@@ -13,7 +15,7 @@ export default function Todo({ text, todo, setTodos, todos }) {
     );
   };
   return (
-    <div>
+    <div className="todo">
       <li className={`todo-item ${todo.completed ? "completed" : ""}`}>
         {text}
       </li>

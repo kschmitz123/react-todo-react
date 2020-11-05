@@ -1,3 +1,5 @@
+import "./form.css";
+
 export default function Form({
   setInputText,
   todos,
@@ -19,7 +21,7 @@ export default function Form({
   };
 
   return (
-    <form action="">
+    <form action="" className="form">
       <input value={inputText} onChange={inputTextHandler} type="text" />
       <button onClick={submitTodoHandler} type="submit">
         +
