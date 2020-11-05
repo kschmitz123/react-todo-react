@@ -1,10 +1,8 @@
-export default function Form({
-  setInputText,
-  todos,
-  setTodos,
-  inputText,
-  setStatus,
-}) {
+import { useState } from "react";
+
+export default function Form({ todos, setTodos, setStatus }) {
+  const [inputText, setInputText] = useState("");
+
   const inputTextHandler = (event) => setInputText(event.target.value);
   const submitTodoHandler = (event) => {
     event.preventDefault();
