@@ -44,7 +44,7 @@ function App() {
   };
 
   return (
-    <div className="App">
+    <div className="app">
       <header>
         <h1>Kathrin's Todo List</h1>
       </header>

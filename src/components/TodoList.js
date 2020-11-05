@@ -1,9 +1,10 @@
 import Todo from "./Todo";
+import "./todoList.css";
 
 export default function TodoList({ todos, setTodos, filteredTodos }) {
   return (
     <div>
-      <ul>
+      <ul className="todos">
         {filteredTodos.map((todo) => (
           <Todo
             setTodos={setTodos}

@@ -17,13 +17,18 @@ export default function Form({ todos, setTodos, setStatus }) {
   };
 
   return (
-    <form action="">
-      <input value={inputText} onChange={inputTextHandler} type="text" />
-      <button onClick={submitTodoHandler} type="submit">
+    <form action="" className="form">
+      <input
+        placeholder="Was gibt's zu tun?"
+        value={inputText}
+        onChange={inputTextHandler}
+        type="text"
+      />
+      <button className="form-button" onClick={submitTodoHandler} type="submit">
         +
       </button>
       <div>
-        <select onChange={statusHandler} name="todos">
+        <select className="form-select" onChange={statusHandler} name="todos">
           <option value="all">All</option>
           <option value="completed">Completed</option>
           <option value="uncompleted">Uncompleted</option>
