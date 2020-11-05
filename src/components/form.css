@@ -1,6 +1,22 @@
 .form {
   display: inline-flex;
-  width: 300px;
+  width: 350px;
   margin: 10px;
-  justify-content: space-between;
+  justify-content: space-evenly;
+}
+
+.form > input {
+  font-size: 1.2rem;
+}
+
+.form-button {
+  background-color: rgba(112, 179, 243, 0.932);
+  border: none;
+  width: 30px;
+  height: 30px;
+  border-radius: 50px;
+  cursor: pointer;
+}
+.form-select {
+  width: 50px;
 }
