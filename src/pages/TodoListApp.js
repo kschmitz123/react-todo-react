@@ -1,9 +1,23 @@
-import "./todoListApp.css";
 import { Link } from "react-router-dom";
-import Form from "../components/Form";
+import TodoForm from "../components/Form";
 import TodoList from "../components/TodoList";
-import Button from "../components/Button";
 import { useState, useEffect } from "react";
+import Button from "../components/Button";
+import styled from "styled-components";
+
+const Container = styled.div`
+  display: grid;
+  height: 100vh;
+  width: 100vw;
+  place-content: center;
+  text-align: center;
+`;
+
+const HomeButton = styled(Button)`
+  position: fixed;
+  bottom: 10px;
+  right: 10px;
+`;
 
 function TodoListApp({ title }) {
   const [todos, setTodos] = useState([]);
@@ -44,28 +58,19 @@ function TodoListApp({ title }) {
       setTodos(localTodos);
     }
   };
-  const name = JSON.parse(localStorage.getItem("name"));
+
   return (
-    <div className="app">
-      <header>
-        <h1> {`${name}'s Todo List`}</h1>
-      </header>
-      <Form
-        className="todo-form"
-        todos={todos}
-        setTodos={setTodos}
-        setStatus={setStatus}
-      />
+    <Container>
+      <TodoForm todos={todos} setTodos={setTodos} setStatus={setStatus} />
       <TodoList
         setTodos={setTodos}
         todos={todos}
         filteredTodos={filteredTodos}
       />
-
       <Link to="/" onClick={() => localStorage.removeItem("todos")}>
-        <Button />
+        <HomeButton>Home</HomeButton>
       </Link>
-    </div>
+    </Container>
   );
 }
 

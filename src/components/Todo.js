@@ -1,4 +1,23 @@
+import styled from "styled-components";
 import "./todo.css";
+
+const TodoContainer = styled.div`
+  display: grid;
+  grid-template-columns: 1fr 40px 40px;
+  justify-items: center;
+  align-items: center;
+  width: 90%;
+  border: 1px solid black;
+  border-radius: 25px;
+  margin: 10px;
+  padding: 5px;
+  background-color: white;
+`;
+const Button = styled.button`
+  background: none;
+  border: none;
+  cursor: pointer;
+`;
 
 export default function Todo({ text, todo, setTodos, todos }) {
   const deleteHandler = () => {
@@ -15,12 +34,12 @@ export default function Todo({ text, todo, setTodos, todos }) {
     );
   };
   return (
-    <div className="todo">
+    <TodoContainer>
       <li className={`todo-item ${todo.completed ? "completed" : ""}`}>
         {text}
       </li>
-      <button onClick={completeHandler}>✅</button>
-      <button onClick={deleteHandler}>🗑</button>
-    </div>
+      <Button onClick={completeHandler}>✅</Button>
+      <Button onClick={deleteHandler}>🗑</Button>
+    </TodoContainer>
   );
 }
