@@ -1,4 +1,5 @@
 import { useState } from "react";
+import "./form.css";
 
 export default function Form({ todos, setTodos, setStatus }) {
   const [inputText, setInputText] = useState("");
@@ -17,7 +18,7 @@ export default function Form({ todos, setTodos, setStatus }) {
   };
 
   return (
-    <form action="" className="form">
+    <form action="" className="todo-form">
       <input
         placeholder="Was gibt's zu tun?"
         value={inputText}
@@ -27,8 +28,8 @@ export default function Form({ todos, setTodos, setStatus }) {
       <button className="form-button" onClick={submitTodoHandler} type="submit">
         +
       </button>
-      <div>
-        <select className="form-select" onChange={statusHandler} name="todos">
+      <div className="form-select">
+        <select onChange={statusHandler} name="todos">
           <option value="all">All</option>
           <option value="completed">Completed</option>
           <option value="uncompleted">Uncompleted</option>
