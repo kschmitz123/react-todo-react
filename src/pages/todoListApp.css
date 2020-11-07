@@ -1,6 +1,7 @@
 .app {
   display: grid;
   height: 100vh;
+  width: 360px;
   place-content: center;
   text-align: center;
 }

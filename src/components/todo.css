@@ -1,8 +1,9 @@
 .todo {
   display: grid;
   grid-template-columns: 1fr 40px 40px;
+  justify-items: center;
   align-items: center;
-  width: 300px;
+  width: 90%;
   border: 1px solid black;
   border-radius: 25px;
   margin: 10px;

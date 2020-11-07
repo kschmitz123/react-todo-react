@@ -1,8 +1,7 @@
 .todo-form {
-  display: inline-flex;
+  display: flex;
+  justify-content: space-between;
   width: 350px;
-  margin: 10px;
-  justify-content: space-evenly;
   background-color: white;
   padding: 10px;
   border-radius: 25px;
@@ -24,6 +23,7 @@
 .form-select {
   width: 50px;
   height: 30px;
+  border-radius: 25px;
 }
 .todo-form > input::placeholder {
   text-align: center;
