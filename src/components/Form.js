@@ -28,8 +28,8 @@ export default function Form({ todos, setTodos, setStatus }) {
       <button className="form-button" onClick={submitTodoHandler} type="submit">
         +
       </button>
-      <div>
-        <select className="form-select" onChange={statusHandler} name="todos">
+      <div className="form-select">
+        <select onChange={statusHandler} name="todos">
           <option value="all">All</option>
           <option value="completed">Completed</option>
           <option value="uncompleted">Uncompleted</option>
