@@ -5,7 +5,7 @@ import TodoList from "../components/TodoList";
 import Button from "../components/Button";
 import { useState, useEffect } from "react";
 
-function TodoListApp() {
+function TodoListApp({ title }) {
   const [todos, setTodos] = useState([]);
   const [status, setStatus] = useState("all");
   const [filteredTodos, setFilteredTodos] = useState([]);
@@ -44,11 +44,11 @@ function TodoListApp() {
       setTodos(localTodos);
     }
   };
-
+  const name = JSON.parse(localStorage.getItem("name"));
   return (
     <div className="app">
       <header>
-        <h1>Kathrin's Todo List</h1>
+        <h1> {`${name}'s Todo List`}</h1>
       </header>
       <Form todos={todos} setTodos={setTodos} setStatus={setStatus} />
       <TodoList
@@ -57,8 +57,7 @@ function TodoListApp() {
         filteredTodos={filteredTodos}
       />
 
-      <Link to="/">
-        {" "}
+      <Link to="/" onClick={() => localStorage.removeItem("todos")}>
         <Button />
       </Link>
     </div>
