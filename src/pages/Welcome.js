@@ -17,16 +17,19 @@ export default function Welcome() {
   return (
     <div className="welcome">
       <h1>Todo List</h1>
-      <div className="form">
+      <div className="entry-form">
         <h2>Enter your name:</h2>
         <form action="" onSubmit={handleSubmit}>
           <input
+            className="entry-input"
             type="text"
             placeholder="Name"
             value={title}
             onChange={handleChange}
           />
-          <button type="submit">Submit</button>
+          <button className="form-button" type="submit">
+            Go
+          </button>
         </form>
       </div>
     </div>

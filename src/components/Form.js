@@ -18,7 +18,7 @@ export default function Form({ todos, setTodos, setStatus }) {
   };
 
   return (
-    <form action="" className="form">
+    <form action="" className="todo-form">
       <input
         placeholder="Was gibt's zu tun?"
         value={inputText}

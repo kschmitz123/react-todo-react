@@ -50,7 +50,12 @@ function TodoListApp({ title }) {
       <header>
         <h1> {`${name}'s Todo List`}</h1>
       </header>
-      <Form todos={todos} setTodos={setTodos} setStatus={setStatus} />
+      <Form
+        className="todo-form"
+        todos={todos}
+        setTodos={setTodos}
+        setStatus={setStatus}
+      />
       <TodoList
         setTodos={setTodos}
         todos={todos}
