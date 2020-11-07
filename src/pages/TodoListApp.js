@@ -3,7 +3,7 @@ import TodoForm from "../components/Form";
 import TodoList from "../components/TodoList";
 import { useState, useEffect } from "react";
 import Button from "../components/Button";
-import styled, { ThemeProvider } from "styled-components";
+import styled from "styled-components";
 
 const Container = styled.div`
   display: grid;
@@ -19,20 +19,7 @@ const HomeButton = styled(Button)`
   right: 10px;
 `;
 
-const yellow = {
-  backgroundColor: "#EAD052",
-  textColor: "#B37300",
-  border: "2px solid #B37300",
-};
-
-const blue = {
-  backgroundColor: "#5266EA",
-  textColor: "#051266",
-  border: "2px solid #0920B3",
-};
 function TodoListApp({ title }) {
-  const [theme, setTheme] = useState(blue);
-
   const [todos, setTodos] = useState([]);
   const [status, setStatus] = useState("all");
   const [filteredTodos, setFilteredTodos] = useState([]);
@@ -71,31 +58,19 @@ function TodoListApp({ title }) {
       setTodos(localTodos);
     }
   };
-  const name = JSON.parse(localStorage.getItem("name"));
-  return (
-    <ThemeProvider theme={theme}>
-      <Container>
-        <button
-          onClick={() => setTheme(theme === blue ? yellow : blue)}
-          type="button"
-        >
-          Change color
-        </button>
-        <header>
-          <h1> {`${name}'s Todo List`}</h1>
-        </header>
-        <TodoForm todos={todos} setTodos={setTodos} setStatus={setStatus} />
-        <TodoList
-          setTodos={setTodos}
-          todos={todos}
-          filteredTodos={filteredTodos}
-        />
 
-        <Link to="/" onClick={() => localStorage.removeItem("todos")}>
-          <HomeButton>Home</HomeButton>
-        </Link>
-      </Container>
-    </ThemeProvider>
+  return (
+    <Container>
+      <TodoForm todos={todos} setTodos={setTodos} setStatus={setStatus} />
+      <TodoList
+        setTodos={setTodos}
+        todos={todos}
+        filteredTodos={filteredTodos}
+      />
+      <Link to="/" onClick={() => localStorage.removeItem("todos")}>
+        <HomeButton>Home</HomeButton>
+      </Link>
+    </Container>
   );
 }
 
